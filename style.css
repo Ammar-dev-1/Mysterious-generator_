@@ -142,3 +142,19 @@ body::before {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  #compliment {
+    font-size: 1.4em;
+    padding: 20px;
+  }
+
+  .button {
+    font-size: 1.1em;
+    padding: 12px 24px;
+  }
+}
