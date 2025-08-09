@@ -77,17 +77,6 @@ body::before {
   }
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.2em;
-  }
-
-  #compliment {
-    font-size: 1em;
-    padding: 12px;
-  }
-}
-
 .button {
   position: relative;
   display: inline-block;
@@ -143,7 +132,8 @@ body::before {
   border-radius: 5px;
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 412px) {
   h1 {
     font-size: 1.8em;
   }
