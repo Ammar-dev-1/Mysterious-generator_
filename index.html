@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Compliment Generator</title>
+    <style>
+      .button {
+        position: relative;
+        display: inline-block;
+        margin: 20px;
+      }
+
+      .button a {
+        color: white;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 36px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #ffa12b;
+        display: block;
+        position: relative;
+        padding: 20px 40px;
+
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        text-shadow: 0px 1px 0px #000;
+        filter: dropshadow(color=#000, offx=0px, offy=1px);
+
+        -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+        -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+        box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+      .button a:active {
+        top: 10px;
+        background-color: #f78900;
+
+        -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+        -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
+        box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+      }
+
+      .button:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        padding: 4px;
+        position: absolute;
+        bottom: -15px;
+        left: -4px;
+        z-index: -1;
+        background-color: #2b1800;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="text-center">
+        <h1 style="text-align: center">Ap ko warning de raha hoon :)</h1>
+        <div id="compliment" style="text-align: center">
+          Button dabao aur check karo hehe
+        </div>
+        <div ontouchstart="" onclick="generateCompliment()">
+          <div class="button">
+            <a href="#">Idhar dabao</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const compliments = [
+        "Tumhari muskurahat dil jeet leti hai.",
+        "Tumhari baatein dil ko sukoon deti hain.",
+        "Tumhari soch bhot khoobsurat hai.",
+        "Tumhari nazar mein ek alag chamak hai.",
+        "Tumhari awaaz mein ek ajeeb si khushi hai.",
+        "Tumhari ada ka har andaz lajawab hai.",
+        "Tumhari hansi subah ki roshni jaise hai.",
+        "Tumhari mehnat tumhei aur khoobsurat banati hai.",
+        "Tumhara dil bhot saaf hai. aisi hi rehna!",
+        "Tumhari honesty tumhei sab se alag aur unique banati hai.",
+        "Tumhara confidence bhot inspiring hai.",
+        "Tumhari simplicity tumhari khoobsurti barhati hai.",
+        "Tumhara har lafz dil ko chhoo leta hai.",
+        "Tumhari positivity sub kuch roshan kar deti hai.",
+        "Tumhari energy sabko attract karti hai.",
+        "Tumhara andaaz baat krne ka bhot pyara hai.",
+        "Tumhari nazar ka asar seedha dil pr hota hai.",
+        "Tumhara support bhot keemti hai.",
+        "Tumhara har kaam tumhari shaksiyat ka pata deta hai.",
+        "Tumhari wajood se jagah behtar lagti hai.",
+      ];
+
+      function generateCompliment() {
+        const complimentBox = document.getElementById("compliment");
+        complimentBox.classList.remove("show");
+
+        setTimeout(() => {
+          const randomIndex = Math.floor(Math.random() * compliments.length);
+          complimentBox.textContent = compliments[randomIndex];
+          complimentBox.classList.add("show");
+        }, 100);
+      }
+    </script>
+  </body>
+</html>
