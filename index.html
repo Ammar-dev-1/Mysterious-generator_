@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mysterious Generator</title>
     <style>
-      .button {
-        position: relative;
-        display: inline-block;
-        margin: 20px;
-      }
+     .super-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: linear-gradient(145deg, #0f0f0f, #1c1c1c);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
 
-      .button a {
-        color: white;
-        font-family: Helvetica, sans-serif;
-        font-weight: bold;
-        font-size: 36px;
-        text-align: center;
-        text-decoration: none;
-        background-color: #ffa12b;
-        display: block;
-        position: relative;
-        padding: 20px 40px;
+.super-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ffff);
+  animation: rotate 4s linear infinite;
+  z-index: -2;
+}
 
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        text-shadow: 0px 1px 0px #000;
-        filter: dropshadow(color=#000, offx=0px, offy=1px);
+.super-button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #0a0a0a;
+  border-radius: inherit;
+  z-index: -1;
+}
 
-        -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-        -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-        box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+.super-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+}
 
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-      }
+.super-button:hover .arrow {
+  transform: translateX(6px);
+}
 
-      .button a:active {
-        top: 10px;
-        background-color: #f78900;
+.arrow {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease-in-out;
+  color: #00ffff;
+}
 
-        -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-        -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-        box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-      }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-      .button:after {
-        content: "";
-        height: 100%;
-        width: 100%;
-        padding: 4px;
-        position: absolute;
-        bottom: -15px;
-        left: -4px;
-        z-index: -1;
-        background-color: #2b1800;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-      }
     </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
@@ -68,13 +82,13 @@
   <body>
     <div class="background">
       <div class="text-center">
-        <h1 style="text-align: center">Ap ko warning de raha hoon :)</h1>
-        <div id="compliment" style="text-align: center">
+        <h1 style="text-transform: capitalize; text-align: center">Ap ko warning de raha hoon :)</h1>
+        <div id="compliment" style="text-transform: capitalize; text-align: center">
           Button dabao aur check karo hehe
         </div>
         <div ontouchstart="" onclick="generateCompliment()">
-          <div class="button">
-            <a href="#">Idhar dabao</a>
+          <div class="super-button">
+            <a href="#" style="text-decoration: none; color: white;">Idhar dabao</a>
           </div>
         </div>
       </div>
@@ -100,7 +114,7 @@
         "Tumhara andaaz baat krne ka bhot pyara hai.",
         "Tumhari nazar ka asar seedha dil pr hota hai.",
         "Tumhara support bhot keemti hai.",
-        "Tumhara har kaam tumhari shaksiyat ka pata deta hai.",
+        "Tumhara har kaam tumhari shaksiyat ka bata deta hai.",
         "Tumhari wajood se jagah behtar lagti hai.",
       ];
 
