@@ -1,150 +1,44 @@
 body {
-  position: relative;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-body::before {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  content: "";
-  opacity: 0.97;
-  z-index: -1;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(45deg, #ee76ad 0%, #efac78 100%);
-}
-
-.text-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
 }
 
-.button {
-  margin: 15px;
-  padding: 10px;
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
 }
 
 #compliment {
-  font-size: 1.5em;
-  margin: 20px;
-  color: black;
-  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.2em;
+  background-color: skyblue;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  background-color: skyblue;
-  transform: scale(0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
   transition: all 0.5s ease;
 }
 
-#compliment.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-@media (max-width: 768px) {
-  .text-center {
-    padding: 20px;
-    height: auto;
-  }
-
+@media (min-width: 768px) {
   h1 {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 10px;
+    font-size: 2.2em;
   }
 
   #compliment {
+    font-size: 1.6em;
+    padding: 30px;
+  }
+
+  .button {
     font-size: 1.2em;
-    padding: 15px;
-    margin: 15px;
-    width: 90%;
-  }
-
-  .button {
-    font-size: 1em;
-    padding: 10px 20px;
-    margin: 10px;
-  }
-}
-
-.button {
-  position: relative;
-  display: inline-block;
-  margin: 20px;
-}
-
-.button a {
-  color: white;
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
-  text-decoration: none;
-  background-color: #ffa12b;
-  display: block;
-  position: relative;
-  padding: 20px 40px;
-
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  text-shadow: 0px 1px 0px #000;
-  filter: dropshadow(color=#000, offx=0px, offy=1px);
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.button a:active {
-  top: 10px;
-  background-color: #f78900;
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-}
-
-.button:after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  padding: 4px;
-  position: absolute;
-  bottom: -15px;
-  left: -4px;
-  z-index: -1;
-  background-color: #2b1800;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-
-@media (max-width: 412px) {
-  h1 {
-    font-size: 1.8em;
-  }
-
-  #compliment {
-    font-size: 1.4em;
-    padding: 20px;
-  }
-
-  .button {
-    font-size: 1.1em;
-    padding: 12px 24px;
+    padding: 14px 28px;
   }
 }
